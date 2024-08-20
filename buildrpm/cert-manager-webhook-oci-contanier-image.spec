@@ -35,7 +35,7 @@ docker save -o %{app_name}.tar %{docker_tag}
 %__install -D -m 644 %{app_name}.tar %{buildroot}/usr/local/share/olcne/%{app_name}.tar
 
 %files
-%license LICENSE.txt THIRD_PARTY_LICENSES.txt olm/SECURITY.md
+%license LICENSE.txt THIRD_PARTY_LICENSES.txt SECURITY.md
 /usr/local/share/olcne/%{app_name}.tar
 
 %changelog

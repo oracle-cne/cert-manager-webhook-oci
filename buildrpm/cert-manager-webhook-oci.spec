@@ -26,7 +26,7 @@ make go-build-webhook
 install -m 755 -d %{buildroot}/%{app_name}
 
 %files
-%license LICENSE.txt THIRD_PARTY_LICENSES.txt olm/SECURITY.md
+%license LICENSE.txt THIRD_PARTY_LICENSES.txt SECURITY.md
 /%{app_name}/
 
 %changelog
