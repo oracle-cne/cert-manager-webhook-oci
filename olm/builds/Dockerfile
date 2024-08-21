@@ -18,8 +18,8 @@ RUN groupadd -r webhook \
         && chown -R 1000:webhook /home/webhook \
         && rpm -i /tmp/*.rpm \
         && ls -ltr / \
-        && ls -ltr /acme_webhook/ \
-        && cp /acme_webhook/${EXEC_NAME} /home/webhook/${EXEC_NAME}
+        && ls -ltr /cert-manager-webhook-oci/ \
+        && cp /cert-manager-webhook-oci/${EXEC_NAME} /home/webhook/${EXEC_NAME}
 
 USER 1000
 

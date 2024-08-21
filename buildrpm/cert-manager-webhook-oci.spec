@@ -23,8 +23,8 @@ Infrastructure as a DNS provider.
 make go-build-webhook
 
 %install
-install -m 755 -d %{buildroot}/acme_webhook/%{app_name}
-cp -ap out/acme_webhook/%{app_name} %{buildroot}/acme_webhook/%{app_name}
+install -m 755 -d %{buildroot}/%{app_name}
+cp -ap out/acme_webhook/* %{buildroot}/%{app_name}
 
 %files
 %license LICENSE.txt THIRD_PARTY_LICENSES.txt SECURITY.md
