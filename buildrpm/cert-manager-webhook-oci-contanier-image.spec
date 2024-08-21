@@ -1,3 +1,5 @@
+%global debug_package   %{nil}
+
 %{!?registry: %global registry container-registry.oracle.com/olcne}
 %global app_name               cert-manager-webhook-oci
 %global app_version            0.1.0
