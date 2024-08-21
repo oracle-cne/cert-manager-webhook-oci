@@ -16,9 +16,11 @@ RUN groupadd -r webhook \
         && useradd --no-log-init -r -m -d /webhook -g webhook -u 1000 webhook \
         && mkdir /home/webhook \
         && chown -R 1000:webhook /home/webhook \
-        && rpm -v -i /tmp/*.rpm
-        # && cp /workspace/${EXEC_NAME} /home/webhook/${EXEC_NAME}
+        && rpm -i /tmp/*.rpm \
+        && ls -ltr / \
+        && ls -ltr /acme_webhook/ \
+        && cp /acme_webhook/${EXEC_NAME} /home/webhook/${EXEC_NAME}
 
 USER 1000
 
-#ENTRYPOINT ["/home/webhook/cert-manager-webhook-oci"]
+ENTRYPOINT ["/home/webhook/cert-manager-webhook-oci"]
