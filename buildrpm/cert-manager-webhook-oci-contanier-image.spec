@@ -34,7 +34,6 @@ docker build --pull \
 docker save -o %{app_name}.tar %{docker_tag}
 
 %install
-ls -ltr %{app_name}.tar
 %__install -D -m 644 %{app_name}.tar %{buildroot}/usr/local/share/olcne/%{app_name}.tar
 
 %files

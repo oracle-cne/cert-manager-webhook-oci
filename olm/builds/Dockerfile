@@ -1,4 +1,4 @@
-FROM ghcr.io/oracle/oraclelinux:8-slim AS build_base
+FROM container-registry.oracle.com/os/oraclelinux:8-slim
 
 COPY rpms /tmp/
 
@@ -8,8 +8,8 @@ RUN groupadd -r webhook \
         && mkdir /home/webhook \
         && chown -R 1000:webhook /home/webhook \
         && rpm -i /tmp/*.rpm \
-        && ls -ltr /cert-manager-webhook-oci/ \
-        && cp /cert-manager-webhook-oci/cert-manager-webhook-oci /home/webhook/cert-manager-webhook-oci
+        && cp /cert-manager-webhook-oci/cert-manager-webhook-oci /home/webhook/cert-manager-webhook-oci \
+        && rm -rf /var/cache/yum/* /var/lib/rpm/* /tmp/*.rpm
 
 USER 1000
 
