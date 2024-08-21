@@ -16,8 +16,8 @@ RUN groupadd -r webhook \
         && useradd --no-log-init -r -m -d /webhook -g webhook -u 1000 webhook \
         && mkdir /home/webhook \
         && chown -R 1000:webhook /home/webhook \
-        && rpm -v -i /tmp/*.rpm && \
-	&& ls -ltr /workspace/
+        && rpm -v -i /tmp/*.rpm \
+        && ls -ltr /workspace/
         && cp /workspace/${EXEC_NAME} /home/webhook/${EXEC_NAME}
 
 USER 1000
