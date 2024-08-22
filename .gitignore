@@ -17,6 +17,7 @@ bin
 
 # Generated manifiest
 _out
+out
 
 # Test data and tools
 /testdata/oci/*

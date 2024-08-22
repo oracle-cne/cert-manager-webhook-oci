@@ -66,13 +66,13 @@ DOCKER_IMAGE_FULLNAME := ${DOCKER_REPO}/${DOCKER_IMAGE_FULLNAME}
 endif
 endif
 
-$(shell mkdir -p "$(OUT)")
 export TEST_ASSET_ETCD=_test/kubebuilder/bin/etcd
 export TEST_ASSET_KUBE_APISERVER=_test/kubebuilder/bin/kube-apiserver
 export TEST_ASSET_KUBECTL=_test/kubebuilder/bin/kubectl
 
 .PHONY: rendered-manifest.yaml
 rendered-manifest.yaml:
+	$(shell mkdir -p "$(OUT)")
 	helm template \
 	    cert-manager-webhook-oci \
         --set image.repository=$(DOCKER_IMAGE_FULLNAME) \
@@ -102,6 +102,13 @@ go-build-linux-debug:
 	GOOS=linux GOARCH=amd64 $(GO) build \
 		-ldflags "${GO_LDFLAGS}" \
 		-o out/linux_amd64/${NAME} \
+		main.go
+
+.PHONY: go-build-webhook
+go-build-webhook:
+	$(GO) build \
+		-ldflags "${GO_LDFLAGS}" \
+		-o out/acme_webhook/${NAME} \
 		main.go
 
 .PHONY: docker-build
