@@ -3,8 +3,8 @@
 %global _buildhost          build-ol%{?oraclelinux}-%{?_arch}.oracle.com
 
 Name:           cert-manager-webhook-oci
-Version:        0.1.0
-Release:        1%{?dist}
+Version:        1.1.0
+Release:        2%{?dist}
 Summary:        ACME webhook for Oracle Cloud Infrastructure
 
 Group:          System/Management
@@ -31,5 +31,8 @@ cp -ap out/acme_webhook/* %{buildroot}/%{app_name}
 /%{app_name}/
 
 %changelog
-* Wed Aug 14 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 0.1.0-1
-- Changes to build the component in OLCNE pipeline
+* Wed Aug 28 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 1.1.0-2
+- Update release version
+
+* Wed Aug 28 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 1.1.0-1
+- Initial change
