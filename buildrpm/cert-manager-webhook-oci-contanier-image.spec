@@ -2,8 +2,8 @@
 
 %{!?registry: %global registry container-registry.oracle.com/olcne}
 %global app_name               cert-manager-webhook-oci
-%global app_version            0.1.0
-%global oracle_release_version 1
+%global app_version            1.1.0
+%global oracle_release_version 2
 %global _buildhost             build-ol%{?oraclelinux}-%{?_arch}.oracle.com
 
 Name:           %{app_name}-container-image
@@ -41,5 +41,8 @@ docker save -o %{app_name}.tar %{docker_tag}
 /usr/local/share/olcne/%{app_name}.tar
 
 %changelog
-* Wed Aug 14 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 0.1.0-1
-- Changes to build the component in OLCNE pipeline
+* Wed Aug 28 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 1.1.0-2
+- Update release version
+
+* Wed Aug 28 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 1.1.0-1
+- Initial change
