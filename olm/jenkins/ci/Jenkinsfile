@@ -1,11 +1,11 @@
-@Library('olcne-pipeline') _
+@Library('olcne-pipeline')
 import com.oracle.olcne.pipeline.BranchPattern
 
 String version = '1.1.0'
 String imgTag  = "v" + version
 
 olcnePipeline(
-        branchPattern: new BranchPattern(master: 'oracle/release/.*', feature: 'feature/.*'),
+        branchPattern: new BranchPattern(master: 'oracle/release/.*', feature: '(?!^release/.*$)(^.*$)'),
         containers: [('container-registry.oracle.com/olcne/cert-manager-webhook-oci:' + imgTag): 'olcne/cert-manager-webhook-oci:' + imgTag],
         platforms: ['ol8'],
         architectures: ['x86_64', 'aarch64'],
