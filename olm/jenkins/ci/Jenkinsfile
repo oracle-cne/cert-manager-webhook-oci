@@ -10,4 +10,5 @@ olcnePipeline(
         platforms: ['ol8'],
         architectures: ['x86_64', 'aarch64'],
         publishImage: false,
+        noSlim: [],
 )
