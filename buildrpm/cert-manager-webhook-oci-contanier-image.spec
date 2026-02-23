@@ -23,7 +23,7 @@ Infrastructure as a DNS provider.
 
 %build
 %global rpm_name %{app_name}-%{version}-%{release}.%{_build_arch}
-%global docker_tag %{registry}/%{app_name}:v%{version}
+%global docker_tag %{registry}/%{app_name}:v%{version}-1
 
 yum clean all
 yumdownloader --destdir=${PWD}/rpms %{rpm_name}
