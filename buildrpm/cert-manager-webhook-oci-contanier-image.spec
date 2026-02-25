@@ -3,7 +3,7 @@
 %{!?registry: %global registry container-registry.oracle.com/olcne}
 %global app_name               cert-manager-webhook-oci
 %global app_version            1.1.0
-%global oracle_release_version 2
+%global oracle_release_version 3
 %global _buildhost             build-ol%{?oraclelinux}-%{?_arch}.oracle.com
 
 Name:           %{app_name}-container-image
@@ -23,12 +23,12 @@ Infrastructure as a DNS provider.
 
 %build
 %global rpm_name %{app_name}-%{version}-%{release}.%{_build_arch}
-%global docker_tag %{registry}/%{app_name}:v%{version}
+%global docker_tag %{registry}/%{app_name}:v%{version}-1
 
 yum clean all
 yumdownloader --destdir=${PWD}/rpms %{rpm_name}
 
-docker build --pull \
+docker build --pull --squash \
     --build-arg https_proxy=${https_proxy} \
     -t %{docker_tag} -f ./olm/builds/Dockerfile .
 docker save -o %{app_name}.tar %{docker_tag}
@@ -41,6 +41,9 @@ docker save -o %{app_name}.tar %{docker_tag}
 /usr/local/share/olcne/%{app_name}.tar
 
 %changelog
+* Wed Feb 11 2026 Murali Annamneni <murali.annamneni@oracle.com> - 1.1.0-3
+- Update golang version to 1.25.7
+
 * Wed Aug 28 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 1.1.0-2
 - Update release version
 

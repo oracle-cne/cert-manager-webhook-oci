@@ -4,7 +4,7 @@
 
 Name:           cert-manager-webhook-oci
 Version:        1.1.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ACME webhook for Oracle Cloud Infrastructure
 
 Group:          System/Management
@@ -31,6 +31,9 @@ cp -ap out/acme_webhook/* %{buildroot}/%{app_name}
 /%{app_name}/
 
 %changelog
+* Wed Feb 11 2026 Murali Annamneni <murali.annamneni@oracle.com> - 1.1.0-3
+- Update golang version to 1.25.7
+
 * Wed Aug 28 2024 Padmanabha Bhat <padmanabha.bhat@oracle.com> 1.1.0-2
 - Update release version
 

@@ -4,6 +4,8 @@
 SPDX:Apache-2.0
 
 ---------------------------------- Copyright -----------------------------------
+Copyright (c) 2023 Oracle and/or its affiliates.
+Copyright (c) [year,] year Oracle and/or its affiliates."
 Copyright 2019 The cert-manager Authors. All Rights Reserved.
 Copyright 2020 The ACME webhook for Oracle Cloud Infrastructure Authors. All Rights Reserved.
 
@@ -218,6 +220,7 @@ Copyright 2013 Ernest Micklei. All rights reserved.
 Copyright 2014 Ernest Micklei. All rights reserved.
 Copyright 2015 Ernest Micklei. All rights reserved.
 Copyright 2018 Ernest Micklei. All rights reserved.
+Copyright 2021 Ernest Micklei. All rights reserved.
 
 --------------------------------- (separator) ----------------------------------
 
@@ -623,7 +626,9 @@ github.com/modern-go/concurrent
 SPDX:Apache-2.0
 
 == Copyright
-(no copyright notices found)
+Copyright 2018 GitHub noreply@github.com
+Copyright 2018 Tao Wen taowen@gmail.com
+Copyright 2018 kr1sten0 zhqy0807@gmail.com
 
 --------------------------------- (separator) ----------------------------------
 
@@ -634,7 +639,16 @@ github.com/modern-go/reflect2
 SPDX:Apache-2.0
 
 == Copyright
-(no copyright notices found)
+Copyright 2018 GitHub noreply@github.com
+Copyright 2018 Justin Santa Barbara justinsb@google.com
+Copyright 2018 Tao Wen taowen@gmail.com
+Copyright 2018 nextzhou nextzhou@gmail.com
+Copyright 2020 Aaron Simmons paleozogt@gmail.com
+Copyright 2020 GitHub noreply@github.com
+Copyright 2020 Mikko Ylinen mikko.ylinen@intel.com
+Copyright 2020 xueyuan zhangxueyuan@ayang.com
+Copyright 2021 GitHub noreply@github.com
+Copyright 2021 Tao Wen taowen@chengfayun.com
 
 --------------------------------- (separator) ----------------------------------
 
@@ -2535,6 +2549,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-=== ATTRIBUTION-HELPER-GENERATED:
-=== Attribution helper version: {Major:0 Minor:11 GitVersion:0.5.0-140-gd9a1a0a1 GitCommit:d9a1a0a141aea4c18363434b6aef258211712951 GitTreeState:clean BuildDate:2022-12-19T19:46:01Z GoVersion:go1.19.2 Compiler:gc Platform:darwin/amd64}
-=== License file based on go.mod with md5 sum:  0feb9d259f99b564e583bf4f432e9023

@@ -5,7 +5,7 @@ OS ?= $(shell go env GOOS)
 ARCH ?= $(shell go env GOARCH)
 
 GO ?= GO111MODULE=on CGO_ENABLED=0 go
-GO_LDFLAGS ?= -s -w -extldflags -static
+GO_LDFLAGS ?= -s -w -extldflags -static -X main.version=v1.1.0
 
 OUT := $(shell pwd)/_out
 
@@ -86,6 +86,7 @@ rendered-manifest.yaml:
 .PHONY: go-build
 go-build:
 	$(GO) build \
+		-trimpath=false \
 		-ldflags "${GO_LDFLAGS}" \
 		-o bin/$(shell uname)_$(shell uname -m)/${NAME} \
 		main.go
@@ -93,6 +94,7 @@ go-build:
 .PHONY: go-build-linux
 go-build-linux:
 	GOOS=linux GOARCH=amd64 $(GO) build \
+		-trimpath=false \
 		-ldflags "-s -w ${GO_LDFLAGS}" \
 		-o bin/linux_amd64/${NAME} \
 		main.go
@@ -100,6 +102,7 @@ go-build-linux:
 .PHONY: go-build-linux-debug
 go-build-linux-debug:
 	GOOS=linux GOARCH=amd64 $(GO) build \
+		-trimpath=false \
 		-ldflags "${GO_LDFLAGS}" \
 		-o out/linux_amd64/${NAME} \
 		main.go
@@ -107,6 +110,7 @@ go-build-linux-debug:
 .PHONY: go-build-webhook
 go-build-webhook:
 	$(GO) build \
+		-trimpath=false \
 		-ldflags "${GO_LDFLAGS}" \
 		-o out/acme_webhook/${NAME} \
 		main.go
